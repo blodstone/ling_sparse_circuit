@@ -1,0 +1,11 @@
+{
+    "python.analysis.aiCodeActions": {
+
+        "implementAbstractClasses": true,
+        "generateSymbol": true,
+        "convertFormatString": true
+    },
+    "python.analysis.extraPaths": [
+        "./src"
+    ]
+}
