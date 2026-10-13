@@ -1,0 +1,15 @@
+dataset:
+  path: ${root}/blimp/data
+  linguistic_terms: all
+llm_model:
+  name: google/gemma-3-1b-pt
+  padding_side: left
+  bos: false
+sae_model:
+  name: null
+  width: null
+  sparsity: null
+patch:
+  mode: attribution
+  layer: preset
+  metric: pair_logit_metric

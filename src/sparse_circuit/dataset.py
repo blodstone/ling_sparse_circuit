@@ -40,7 +40,7 @@ class Dataset:
         blimp_files = list(blimp_dir.glob("*.jsonl"))
         if len(blimp_files) == 0:
             self.logging.warning(f"No BLIMP files found in {self.dataset_path}")
-            raise ValueError
+            raise ValueError("No BLiMP files found.")
         for file in tqdm.tqdm(blimp_files):
             with file.open() as f:
                 blimp = [json.loads(line) for line in f]
