@@ -1,5 +1,5 @@
 import pytest
-
+import rootutils
 from sparse_circuit.dataset import Dataset
 from sae_lens import SAETransformerBridge
 
@@ -7,8 +7,9 @@ from sae_lens import SAETransformerBridge
 class TestDataset:
     @pytest.fixture(scope="session")
     def shared_dataset(self):
+        path = rootutils.find_root(search_from=__file__, indicator="pyproject.toml")
         dataset = Dataset(
-            dataset_path="/home/users1/hardy/hardy/project/bella_sparse_circuit/data/raw/blimp/data",
+            dataset_path=f"{path}/data/raw/blimp/data",
             batch_size=4,
         )
         model_name = "gpt2"
