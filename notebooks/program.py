@@ -10,11 +10,12 @@ dataset = Dataset(
     batch_size=4,
 )
 # %%
-model = SAETransformerBridge.boot_transformers("gpt2")
-# %%
-print(model)
-# Make a dataset
+model = SAETransformerBridge.boot_transformers("openai-community/gpt2", device="cuda")
 
+# %%
+logits, cache = model.run_with_cache("Hello world")
+# Make a dataset
+print(logits.shape)
 # Setup the model
 # Discover circuits
 # %%
